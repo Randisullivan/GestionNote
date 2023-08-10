@@ -1,0 +1,12 @@
+{% extends 'home.html' %}
+{% block content %}
+<h1>Liste des classes:</h1>
+
+<ul>
+    {% for classe in classes %}
+    <li> <a href="{% url 'eleves_par_classe' classe.id %}"> {{ classe.nom}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

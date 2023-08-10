@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GESTION DE NOTE</title>
+</head>
+<body>
+ <h1>Gestion de note</h1>
+
+    {% block content %}  {% endblock content %}
+
+    {% if user.is_authenticated %}
+
+    <p>Vous êtes connecté en tant que {{ request.user }}.  </p>
+
+    {% endif%}
+
+
+</body>
+</html>

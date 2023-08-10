@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+ <h1> Elèves de classe {{ classe_nom }}:</h1>
+
+  <ul>
+    {% for eleve in eleves %}
+      <li> {{ eleve.nom }} </li>
+    {% endfor %}
+
+  </ul>
+
+
+{% endblock %}
+
+

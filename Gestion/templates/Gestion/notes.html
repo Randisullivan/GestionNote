@@ -1,0 +1,28 @@
+{% extends 'home.html' %}
+{% block content %}
+ <h1> Notes de l'éleve: </h1>
+
+
+
+
+<table border="1">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>valeur</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for note in notes %}
+            <tr>
+                <td>{{ note.id_eleve }}</td>
+                <td>{{ note.valeurs_notes }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+
+
+
+{% endblock content %}
