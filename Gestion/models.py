@@ -201,4 +201,68 @@ class Professeur(models.Model):
         return f'{self.nom}'
 
 
+class AjouterNotes(models.Model):
+    classe = models.ForeignKey(Classe, on_delete=models.CASCADE)
+    eleve = models.ForeignKey(Eleve, on_delete=models.CASCADE)
+    matiere = models.ForeignKey(Matiere, on_delete=models.CASCADE)
+    note = models.DecimalField(max_digits=10, decimal_places=2)
 
+    class Meta:
+        managed = True  # Allow Django to manage this table
+        db_table = 'ajouter_notes'
+
+    def __str__(self):
+        return f'Note de {self.eleve} en {self.matiere} ({self.classe}) : {self.note}'
+
+
+
+
+
+
+class Note(models.Model):
+    eleve = models.ForeignKey(Eleve, on_delete=models.CASCADE)
+    matiere = models.ForeignKey(Matiere, on_delete=models.CASCADE)
+    note = models.DecimalField(max_digits=10, decimal_places=2)
+
+    class Meta:
+        abstract = True
+    def __str__(self):
+        return f'{self.eleve}'
+
+
+class NoteClasse3eme(Note):
+    class Meta:
+        managed = True
+        db_table = 'note_classe_3eme'
+
+class NoteClasse4eme(Note):
+    class Meta:
+        managed = True
+        db_table = 'note_classe_4eme'
+
+# Ajoutez des modèles similaires pour les autres classes...
+
+class NoteClasse5eme(Note):
+    class Meta:
+        managed = True
+        db_table = 'note_classe_'
+
+class NoteClasse6eme(Note):
+    class Meta:
+        managed = True
+        db_table = 'note_classe'
+
+
+
+
+class NotesEleve(models.Model):
+    eleve = models.ForeignKey(Eleve, on_delete=models.CASCADE)
+    matiere = models.ForeignKey(Matiere, on_delete=models.CASCADE)
+    note = models.DecimalField(max_digits=10, decimal_places=2)
+
+    class Meta:
+        managed = True
+        db_table = 'notes_eleve'
+
+    def __str__(self):
+        return f'Note de {self.eleve} en {self.matiere} : {self.note}'

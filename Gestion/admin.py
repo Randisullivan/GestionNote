@@ -4,11 +4,38 @@ from django.contrib import admin
 
 from django.contrib import admin
 
-from Gestion.models import AuthenticationUser, Classe, Eleve, Matiere, Notes, Professeur, DjangoSession, DjangoAdminLog, AuthGroupPermissions
-
+from Gestion.models import AuthenticationUser,NotesEleve, NoteClasse4eme, NoteClasse3eme, NoteClasse5eme, NoteClasse6eme, AjouterNotes, Classe, Eleve, Matiere, Notes, Professeur, DjangoSession, DjangoAdminLog, AuthGroupPermissions
 
 admin.site.register(AuthenticationUser)
+class NoteClasse3emeAdmin(admin.ModelAdmin):
+    list_display = ('eleve', 'matiere', 'note')
 
+admin.site.register(NoteClasse3eme, NoteClasse3emeAdmin)
+
+
+class NoteClasse4emeAdmin(admin.ModelAdmin):
+    list_display = ('eleve', 'matiere', 'note')
+admin.site.register(NoteClasse4eme,NoteClasse4emeAdmin)
+
+class NoteClasse5emeAdmin(admin.ModelAdmin):
+    list_display = ('eleve', 'matiere', 'note')
+
+admin.site.register(NoteClasse5eme, NoteClasse5emeAdmin)
+
+
+class NoteClasse6emeAdmin(admin.ModelAdmin):
+    list_display = ('eleve', 'matiere', 'note')
+
+admin.site.register(NoteClasse6eme, NoteClasse6emeAdmin)
+
+admin.site.register(NotesEleve)
+
+
+
+
+
+
+admin.site.register(AjouterNotes)
 
 
 admin.site.register(Professeur)
@@ -50,3 +77,7 @@ class NotesAdmin(admin.ModelAdmin):
     list_display = ('valeurs_notes', 'id_eleve', 'id_matiere', 'classe')
 
 admin.site.register(Notes, NotesAdmin)
+
+
+class AjouterNotes(admin.ModelAdmin):
+    list_display = ('classe', 'eleve', 'matiere', 'note')

@@ -43,6 +43,16 @@ urlpatterns = [
    # path('eleveClasse/', Gestion.views.eleves_par_classe, name="eleves_par_classe"),
     path('classes/', Gestion.views.liste_classes, name='liste_classes'),
     path('eleves/<int:classe_id>/',Gestion.views.eleves_par_classe, name='eleves_par_classe'),
+    path('notes/', Gestion.views.ajout_notes3, name="ajout_notes"),
+    path('ajoutnotes4/', Gestion.views.ajout_notes4, name="ajout_notes4"),
+    path('ajoutnotes5/', Gestion.views.ajout_notes5, name="ajout_notes5"),
+    path('ajoutnotes6/', Gestion.views.ajout_notes6, name="ajout_notes6"),
+    path('createNotes/', Gestion.views.create_note3, name="create_note"),
+    path('creeNotes3eme/', Gestion.views.create_note3, name="create_note3"),
+    path('creeNotes4eme/', Gestion.views.create_note4, name="create_note4"),
+    path('creeNotes5eme/', Gestion.views.create_note5, name="create_note5"),
+    path('creeNotes6eme/', Gestion.views.create_note6, name="create_note6"),
+
 
 
 

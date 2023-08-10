@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+
+<h1> Ajouter un  notes pour la classe </h1>
+<p>NB: ajoutez seulement les notes pour votre matières</p>
+<form action="" method="post" >
+
+    {% csrf_token %}
+    {{ form.as_p }}
+ <input type="submit" value="Envoyer">
+
+</form>
+
+{% endblock %}
