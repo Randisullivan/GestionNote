@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import user_passes_test, login_required
 from .models import Classe, Eleve, Note, NoteClasse3eme, NoteClasse4eme, NoteClasse5eme, NoteClasse6eme
 from Gestion.forms import NotesForm, NoteClasse3emeForm, NoteClasse4emeForm, NoteClasse5emeForm, NoteClasse6emeForm
+from django.shortcuts import render, get_object_or_404
+
+
 def is_student(user):
     return user.role == 'STUDENT'
 
@@ -155,3 +158,11 @@ def create_note6(request):
         form = NoteClasse4emeForm()
 
     return render(request, 'Gestion/create_note6.html', {'form': form})
+
+
+from django.shortcuts import render
+from .models import Eleve, NoteClasse3eme, NoteClasse4eme, NoteClasse5eme, NoteClasse6eme
+
+from django.shortcuts import render, get_object_or_404
+from .models import Eleve, NoteClasse3eme, NoteClasse4eme, NoteClasse5eme, NoteClasse6eme
+

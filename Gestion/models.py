@@ -266,3 +266,4 @@ class NotesEleve(models.Model):
 
     def __str__(self):
         return f'Note de {self.eleve} en {self.matiere} : {self.note}'
+

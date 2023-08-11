@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes par élève</title>
+</head>
+<body>
+    <h1>Notes de {{ eleve.nom }}</h1>
+
+    <h2>Classe 3ème</h2>
+    <table>
+        <tr>
+            <th>Matière</th>
+            <th>Note</th>
+        </tr>
+        {% for note in notes_3eme %}
+            <tr>
+                <td>{{ note.matiere.nom }}</td>
+                <td>{{ note.note }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% for eleve in eleves %}
+    <tr>
+        <td><a href="{% url 'notes_par_eleve' eleve.id %}">{{ eleve.nom }}</a></td>
+        <td>{{ eleve.classe }}</td>
+    </tr>
+{% endfor %}
+
+    <!-- Répétez la structure du tableau pour les autres classes (4ème, 5ème, 6ème) -->
+
+</body>
+</html>
