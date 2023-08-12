@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
-    <p>{{ message }}</p>
-    <form method="post">
-        {{ form.as_p }}
-        {% csrf_token %}
+<div class="container-fluid bg-light d-flex align-items-center justify-content-center min-vh-100 overflow-hidden">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card shadow-lg">
+                    <div class="card-body p-5">
+                        <h4 class="card-title mb-4 text-center">Connexion</h4>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
 
-        <button type="submit"> Se connecter </button>
-
-
-    </form>
-
+                            <div class="form-group mt-4">
+                                <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
-
-

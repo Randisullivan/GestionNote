@@ -2,8 +2,8 @@
 
 {% block content %}
 
-    <h1>Ajout de notes :</h1>
- <style>
+    <h1 style="color: #333;">Ajout de notes :</h1>
+    <style>
         table {
             border-collapse: collapse;
             width: 100%;
@@ -19,13 +19,47 @@
         th {
             background-color: #f2f2f2;
         }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            margin-top: 20px;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #555;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:last-child {
+            margin-right: 0;
+        }
+
+        a.logout-link {
+            color: #dc3545;
+        }
     </style>
 
-        <h1> Classe: 6eme</h1>
+    <h1> Classe: 6eme</h1>
     <table>
         <thead>
             <tr>
-
                 <th>Élève:</th>
                 <th>Matière :</th>
                 <th>Valeur des notes:</th>
@@ -33,14 +67,19 @@
         </thead>
         <tbody>
             {% for note in notes %}
-                <tr >
+                <tr>
                     <td>{{ note.eleve }}</td>
                     <td>{{ note.matiere }}</td>
                     <td>{{ note.note }}</td>
-
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-
+    <h3> ajouter des notes pour les classes:
+        <a href="{% url 'create_note3' %}" > 3eme </a> ---
+        <a href="{% url 'create_note4' %}" > 4eme </a> ---
+        <a href="{% url 'create_note5' %}" > 5eme </a> ---
+        <a href="{% url 'create_note6' %}" > 6eme </a>
+    </h3>
+    <a class="logout-link" href="{% url 'logoutTeacher' %}">Se déconnecter</a>
 {% endblock %}

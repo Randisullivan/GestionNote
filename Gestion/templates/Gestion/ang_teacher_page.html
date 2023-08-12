@@ -1,10 +1,26 @@
 {% extends 'home.html' %}
+{% load static %}
 {% block content %}
- <h1> ANGLAIS </h1>
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<div class="container">
+    <div class="title-section">
+        <h1>ANGLAIS</h1>
+    </div>
+    <div class="links-section">
+        
+        <h3>Ajouter des notes pour les classes:
+            <a href="{% url 'create_note3' %}">3ème</a>
+            <a href="{% url 'create_note4' %}">4ème</a>
+            <a href="{% url 'create_note5' %}">5ème</a>
+            <a href="{% url 'create_note6' %}">6ème</a>
+        </h3>
+    </div>
+    <div class="links-section2">    
+    <div class="links-section">
+        <a href="{% url 'logoutTeacher' %}" class="logout-link">Se déconnecter</a>
+    </div>
+</div>
 
 
-<a href="{% url 'liste_classes' %}"> Voir la liste des classes </a>  <br>
-<h3> ajouter des notes pour les classes: <a href="{% url 'create_note3' %}" > 3eme </a> ---<a href="{% url 'create_note4' %}" > 4eme </a> --- <a href="{% url 'create_note5' %}" > 5eme </a> --- <a href="{% url 'create_note6' %}" > 6eme </a> </h3>
-
-<a href="{% url 'logoutTeacher' %}">Se déconnecter</a>
+</div>
 {% endblock content %}

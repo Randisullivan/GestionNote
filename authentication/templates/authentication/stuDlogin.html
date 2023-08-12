@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    
+{% endblock %}
 
 {% block content %}
-    <p>{{ message }}</p>
-    <form method="post">
-        {{ form.as_p }}
-        {% csrf_token %}
-
-        <button type="submit"> Se connecter </button>
-
-
-    </form>
-
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <div class="login-container">
+        <h2 class="login-header">Connexion</h2>
+        <p class="login-message">{{ message }}</p>
+        <form method="post" class="login-form">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="login-button">Se connecter</button>
+        </form>
+    </div>
 {% endblock content %}
-
-

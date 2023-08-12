@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>GESTION DE NOTE</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.tailwindcss.com/2.2.19/tailwind.min.css" rel="stylesheet">
+
+
+    {% load static %}
+
 </head>
 <body>
  <h1>Gestion de note</h1>
@@ -11,7 +19,7 @@
 
     {% if user.is_authenticated %}
 
-    <p>Vous êtes connecté en tant que {{ request.user }}.  </p>
+
 
     {% endif%}
 

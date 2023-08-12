@@ -1,16 +1,26 @@
 {% extends 'home.html' %}
-
+{% load static %}
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
+<div class="page-container">
+    <h1 class="page-title">Ajouter des notes pour la classe de 3eme</h1>
+    <p class="page-description">NB: Ajoutez seulement les notes pour votre matière</p>
 
-<h1> Ajouter un  notes pour la classe de 3eme </h1>
-<p>NB: ajoutez seulement les notes pour votre matières</p>
-<form action="" method="post" >
+    <form action="" method="post" class="note-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Envoyer">
+    </form>
 
-    {% csrf_token %}
-    {{ form.as_p }}
- <input type="submit" value="Envoyer">
+    <div class="class-links">
+        <h3>Ajouter des notes pour les classes:</h3>
+        <a href="{% url 'create_note3' %}">3eme</a> |
+        <a href="{% url 'create_note4' %}">4eme</a> |
+        <a href="{% url 'create_note5' %}">5eme</a> |
+        <a href="{% url 'create_note6' %}">6eme</a>
+    </div>
 
-</form>
-
+    <a href="{% url 'logoutTeacher' %}" class="logout-link">Se déconnecter</a>
+</div>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'home.html' %}
-
+{% load static %}
 {% block content %}
-
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
 <h1> Ajouter un  notes pour la classe </h1>
 <p>NB: ajoutez seulement les notes pour votre matières</p>
@@ -12,5 +12,6 @@
  <input type="submit" value="Envoyer">
 
 </form>
-
+<h3> ajouter des notes pour les classes: <a href="{% url 'create_note3' %}" > 3eme </a> ---<a href="{% url 'create_note4' %}" > 4eme </a> --- <a href="{% url 'create_note5' %}" > 5eme </a> --- <a href="{% url 'create_note6' %}" > 6eme </a> </h3>
+<a href="{% url 'logoutTeacher' %}">Se déconnecter</a>
 {% endblock %}

@@ -1,17 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Accueil</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
 </head>
 <body>
- <h1>Bienvenue dans notre site de GESTION DES NOTES des étudiants   </h1>
+<div class="container">
+    <div class="header">
+        <h1>Bienvenue dans notre site de GESTION DES NOTES des étudiants</h1>
+    </div>
 
-  <p> Vous êtes  :
-      - <a href="{% url 'studentLogin' %}"> étudiant </a>
-      - <a href="{% url 'teacherLogin' %}" > professeur </a>
-  </p>
+    <div class="options center-links">
+        <p>
+            <a href="{% url 'studentLogin' %}" class="link-button">étudiant</a>
+            <a href="{% url 'teacherLogin' %}" class="link-button">professeur</a>
+        </p>
+    </div>
+</div>
 
-
+<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
 </body>
 </html>
